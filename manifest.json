@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "JellyPhish",
+  "version": "0.1.0",
+  "description": "Extracts email content for phishing detection (experimental).",
+  "permissions": ["tabs", "storage", "activeTab", "scripting"],
+  "host_permissions": ["https://mail.google.com/*", "https://outlook.live.com/*", "https://outlook.office.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*","https://outlook.live.com/*","https://outlook.office.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  }
+}
